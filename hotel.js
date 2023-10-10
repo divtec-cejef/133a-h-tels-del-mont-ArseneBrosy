@@ -40,7 +40,7 @@ function getChambre() {
  * @returns {Array} tableau des éléments checkbox cochés
  */
 function getOptions() {
-
+  return formulaire.querySelectorAll("input[type=checkbox]:checked");
 }
 
 /**
