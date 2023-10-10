@@ -9,7 +9,6 @@
 "use strict";
 
 let formulaire = document.querySelector("form");
-console.log(formulaire);
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -32,7 +31,8 @@ function getNbChambre() {
  * @returns {String} Type de chambre ou ""
  */
 function getChambre() {
-  return formulaire.querySelector("input[type=radio]:checked").value;
+  let selectedRadio = formulaire.querySelector("input[type=radio]:checked");
+  return selectedRadio === null ? "" : selectedRadio.value;
 }
 
 /**
@@ -55,15 +55,17 @@ function valideSaisie() {
   if (getHotel() === "0") {
     result += "<li>Sélectionnez un hôtel !</li>";
   }
-  if (isNaN(getNbChambre()) || getChambre() < 1 || getNbChambre() > 12) {
+  if (isNaN(getNbChambre()) || getNbChambre() < 1 || getNbChambre() > 12) {
     result += "<li>Saisissez un nombre de chambre entre 1 et 12 !</li>";
   }
-  if (getChambre() !== undefined) {
+  if (getChambre() === "") {
     result += "<li>Sélectionnez un type de chambre !</li>";
   }
 
   // met le tout dans une balise ul s'il y a des erreurs
-  result = result === "" ? "" : "<ul>${result}</ul>";
+  result = result === "" ? "" : `<ul>${result}</ul>`;
+
+  return result;
 }
 
 /**
@@ -80,7 +82,8 @@ function afficheConfirmation() {
  */
 function reserver(event) {
   event.preventDefault();
-  alert("coucou");
+
+  console.log(valideSaisie());
 }
 
 formulaire.addEventListener("submit", reserver);
