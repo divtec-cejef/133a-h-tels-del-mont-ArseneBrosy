@@ -51,7 +51,11 @@ function getOptions() {
  * @returns {String}    Chaine vide si pas d'erreur ou <ul> d'erreurs
  */
 function valideSaisie() {
-
+  let result = "";
+  if (getHotel() === "0") {
+    result += "<li>Sélectionnez un hôtel !</li>"
+  }
+  if (getNbChambre())
 }
 
 /**
