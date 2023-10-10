@@ -15,6 +15,32 @@
     <h1>Hôtels à Delémont</h1>
 
     <!-- FORMULAIRE DE RESERVATION -->
+    <form action="" method="post">
+        <ul>
+            <li>
+                <label for="hotel">Hôtel</label>
+                <select name="hotel" id="hotel">
+                    <option value="0" selected>--Sélectionnez un hôtel--</option>
+                    <option value="City">Hôtel City</option>
+                    <option value="National">Hôtel National</option>
+                    <option value="Midi">Hôtel Le Midi</option>
+                    <option value="Victoria">Hôtel Victoria</option>
+                </select>
+            </li>
+            <li>
+                <label for="nombre-chambre">Nombre de chambres</label>
+                <input type="text" id="nombre-chambre" name="nombre-chambre" maxlength="2">
+            </li>
+            <li>
+                <fieldset>
+                    <label for="chambre-simple">
+                        <input type="radio" name="type-chambre" id="chambre-simple">
+                        <span></span>
+                    </label>
+                </fieldset>
+            </li>
+        </ul>
+    </form>
     <!-- au cas ou t'aurais pas compris place ton fromulaire ici. A+ Manfred -->
 </div>
 
