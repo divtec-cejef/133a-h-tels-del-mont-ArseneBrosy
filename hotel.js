@@ -53,9 +53,17 @@ function getOptions() {
 function valideSaisie() {
   let result = "";
   if (getHotel() === "0") {
-    result += "<li>Sélectionnez un hôtel !</li>"
+    result += "<li>Sélectionnez un hôtel !</li>";
   }
-  if (getNbChambre())
+  if (isNaN(getNbChambre()) || getChambre() < 1 || getNbChambre() > 12) {
+    result += "<li>Saisissez un nombre de chambre entre 1 et 12 !</li>";
+  }
+  if (getChambre() !== undefined) {
+    result += "<li>Sélectionnez un type de chambre !</li>";
+  }
+
+  // met le tout dans une balise ul s'il y a des erreurs
+  result = result === "" ? "" : "<ul>${result}</ul>";
 }
 
 /**
