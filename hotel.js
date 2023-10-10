@@ -11,8 +11,8 @@
 let formulaire = document.querySelector("form");
 
 /**
- * Retourne le nom de l'hotel sélectionné par le visiteur
- * @returns {String} Nom de l'hotêl ou "0" si pas de sélection
+ * Retourne le nom de l'hôtel sélectionné par le visiteur
+ * @returns {String} Nom de l'hôtel ou "0" si pas de sélection
  */
 function getHotel() {
   return formulaire.querySelector("#hotel").value;
@@ -40,7 +40,7 @@ function getChambre() {
  * @returns {Array} tableau des éléments checkbox cochés
  */
 function getOptions() {
-  return formulaire.querySelectorAll("input[type=checkbox]:checked");
+  return Array.from(formulaire.querySelectorAll("input[type=checkbox]:checked"));
 }
 
 /**
@@ -76,7 +76,7 @@ function afficheConfirmation() {
 
   reservation.querySelector("#photo").src = `./images/${getHotel().toLowerCase()}.jpg`;
   reservation.querySelector("h2").innerHTML = getHotel();
-  reservation.querySelector("#chambre_nombre").innerHTML = getNbChambre();
+  reservation.querySelector("#chambre_nombre").innerHTML = getNbChambre().toString();
   reservation.querySelector("#chambre_type").innerHTML = getChambre();
 
   // crée la liste des options
