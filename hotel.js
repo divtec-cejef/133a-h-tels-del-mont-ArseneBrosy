@@ -72,7 +72,22 @@ function valideSaisie() {
  * Affiche la confirmation de réservation
  */
 function afficheConfirmation() {
+  let reservation = document.querySelector("#reservation");
 
+  reservation.querySelector("#photo").src = `./images/${getHotel().toLowerCase()}.jpg`;
+  reservation.querySelector("h2").innerHTML = getHotel();
+  reservation.querySelector("#chambre_nombre").innerHTML = getNbChambre();
+  reservation.querySelector("#chambre_type").innerHTML = getChambre();
+
+  // crée la liste des options
+  let optionsList = "";
+  for (let option of getOptions()) {
+    optionsList += `<li>${option.name}</li>`;
+  }
+
+  reservation.querySelector("#options").innerHTML = optionsList;
+
+  reservation.style.display = "block";
 }
 
 /**
@@ -83,7 +98,22 @@ function afficheConfirmation() {
 function reserver(event) {
   event.preventDefault();
 
-  console.log(valideSaisie());
+  let messageDiv = document.querySelector("#message");
+  messageDiv.style.display = "none";
+
+  let erreurs = valideSaisie();
+  if (erreurs !== "") {
+    messageDiv.innerHTML = erreurs;
+    messageDiv.style.display = "block";
+    document.querySelector("#reservation").style.display = "none";
+  } else {
+    afficheConfirmation();
+  }
 }
 
 formulaire.addEventListener("submit", reserver);
+
+formulaire.addEventListener("reset", (e) => {
+  document.querySelector("#reservation").style.display = "none";
+  document.querySelector("#message").style.display = "none";
+});
