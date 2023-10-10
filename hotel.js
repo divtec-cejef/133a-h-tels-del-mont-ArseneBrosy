@@ -1,5 +1,5 @@
 ﻿/**
-* @author      Steve Fallet <steve.fallet@divtec.ch>
+* @author      Arsène Brosy <arsene.brosy@divtec.ch>
 * @version     1.0
 * @since       2023-10-09
 *
@@ -7,6 +7,9 @@
 */
 
 "use strict";
+
+let formulaire = document.querySelector("form");
+console.log(formulaire);
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -64,5 +67,8 @@ function afficheConfirmation() {
  * @param event Objet représentant l'événement
  */
 function reserver(event) {
-
+  event.preventDefault();
+  alert("coucou");
 }
+
+formulaire.addEventListener("submit", reserver);
