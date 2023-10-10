@@ -16,7 +16,7 @@ console.log(formulaire);
  * @returns {String} Nom de l'hotêl ou "0" si pas de sélection
  */
 function getHotel() {
-
+  return formulaire.querySelector("#hotel").value;
 }
 
 /**
@@ -24,7 +24,7 @@ function getHotel() {
  * @returns {Number} Nombre de chambres ou NaN (Not A Number)
  */
 function getNbChambre() {
-
+  return parseInt(formulaire.querySelector("#nombre-chambre").value);
 }
 
 /**
@@ -32,7 +32,7 @@ function getNbChambre() {
  * @returns {String} Type de chambre ou ""
  */
 function getChambre() {
-
+  return
 }
 
 /**
