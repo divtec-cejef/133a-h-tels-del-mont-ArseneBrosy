@@ -113,7 +113,7 @@ function reserver(event) {
 
 formulaire.addEventListener("submit", reserver);
 
-formulaire.addEventListener("reset", (e) => {
+formulaire.addEventListener("reset", () => {
   document.querySelector("#reservation").style.display = "none";
   document.querySelector("#message").style.display = "none";
 });
