@@ -32,7 +32,7 @@ function getNbChambre() {
  * @returns {String} Type de chambre ou ""
  */
 function getChambre() {
-  return
+  return formulaire.querySelector("input[type=radio]:checked").value;
 }
 
 /**
