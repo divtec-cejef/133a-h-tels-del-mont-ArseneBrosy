@@ -20,7 +20,7 @@
             <li>
                 <label for="hotel">Hôtel</label>
                 <select name="hotel" id="hotel">
-                    <option value="0" selected>--Sélectionnez un hôtel--</option>
+                    <option value="0" selected>-- Sélectionnez un hotel --</option>
                     <option value="City">Hôtel City</option>
                     <option value="National">Hôtel National</option>
                     <option value="Midi">Hôtel Le Midi</option>
@@ -28,11 +28,12 @@
                 </select>
             </li>
             <li>
-                <label for="nombre-chambre">Nombre de chambres</label>
+                <label for="nombre-chambre">Nombre de chambres :</label>
                 <input type="text" id="nombre-chambre" name="nombre-chambre" maxlength="2">
             </li>
             <li>
                 <fieldset>
+                    <legend>Type de chambre</legend>
                     <label for="standard-simple">
                         <input type="radio" name="type-chambre" id="standard-simple">
                         <span>Standard simple</span>
@@ -41,18 +42,19 @@
                         <input type="radio" name="type-chambre" id="chambre-double">
                         <span>Standard double</span>
                     </label>
-                    <label for="superieur-simple">
-                        <input type="radio" name="type-chambre" id="superieur-simple">
-                        <span>Supérieur simple</span>
+                    <label for="superieure-simple">
+                        <input type="radio" name="type-chambre" id="superieure-simple">
+                        <span>Supérieure simple</span>
                     </label>
-                    <label for="superieur-double">
-                        <input type="radio" name="type-chambre" id="superieur-double">
-                        <span>Supérieur double</span>
+                    <label for="superieure-double">
+                        <input type="radio" name="type-chambre" id="superieure-double">
+                        <span>Supérieure double</span>
                     </label>
                 </fieldset>
             </li>
             <li>
                 <fieldset>
+                    <legend>Options disponibles</legend>
                     <label for="petit-dejeuner">
                         <input type="checkbox" name="petit-dejeuner" id="petit-dejeuner">
                         <span>Petit déjeuner</span>
@@ -67,22 +69,20 @@
                     </label>
                     <label for="ordinateur">
                         <input type="checkbox" name="ordinateur" id="ordinateur">
-                        <span>Ordinateurs</span>
+                        <span>Ordinateur</span>
                     </label>
                     <label for="acces-wifi">
                         <input type="checkbox" name="acces-wifi" id="acces-wifi">
                         <span>Accès Wifi</span>
                     </label>
-                    <label for="animaux-companie">
-                        <input type="checkbox" name="animaux-companie" id="animaux-companie">
-                        <span>Animaux de companie</span>
+                    <label for="animaux-compagnie">
+                        <input type="checkbox" name="animaux-compagnie" id="animaux-compagnie">
+                        <span>Animaux de compagnie</span>
                     </label>
                 </fieldset>
             </li>
             <li>
-                <button type="reset">Effacer</button>
-            </li>
-            <li>
+                <button type="reset">Reset</button>
                 <button type="submit">Réserver</button>
             </li>
         </ul>

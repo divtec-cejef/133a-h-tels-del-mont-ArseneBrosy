@@ -37,6 +37,10 @@ form li:last-child {
 	margin: 0;
 }
 
+form ul li fieldset label {
+	display: block;
+}
+
 input,
 textarea,
 select,
